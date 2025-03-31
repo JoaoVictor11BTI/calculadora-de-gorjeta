@@ -1,221 +1,202 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
- 
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Space Mono", monospace;
-  }
- 
-  :root {
-      font-size: 62.5%;
- 
-      --jagged-ice: #C5E4E7;
-      --white: #FFF;
-      --greyish-turquoise: #5E7A7D;
-      --squeeze: #F3F9FA;
-      --sherpa-blue: #00474B;
-      --topaz: #26C2AE;
-      --beetle-green: #547878;
-      --regent-grey: #7f9d9f;
-      --water-leaf: #9fe8df;
-  }
- 
-  body {
-      font-size: 1.6rem;
-      background: var(--jagged-ice);
-  }
- 
-  header {
-      padding-top: 5rem;
-      padding-bottom: 4rem;
- 
-      display: flex;
-      justify-content: center;
-  }
- 
-  main {
-      background: var(--white);
-      padding: 3.2rem 2.4rem;
-      border-radius: 2.5rem 2.5rem 0 0;
-  }
- 
-  .info {
-      margin-inline: .8rem;
- 
-      div {
-          margin-bottom: 3.2rem;
-      }
- 
-      strong {
-          color: var(--greyish-turquoise);
-          display: block;
-          margin-bottom: .6rem;
-      }
- 
-      .input-box {
-          background: var(--squeeze);
-          padding: .6rem 1.8rem;
-          display: flex;
-          align-items: center;
-          border-radius: .5rem;
- 
-          input {
-              font-size: 2.4rem;
-              border: none;
-              background: transparent;
-              text-align: right;
-              width: 100%;
-              font-weight: 700;
-              outline: none;
-              color: var(--sherpa-blue);
-          }
- 
-          input::placeholder {
-              color: var(--sherpa-blue);
-              opacity: 0.35;
-          }
-      }
- 
-      .input-box:has(input:focus) {
-          outline: 2px solid var(--topaz);
-      }
- 
-      .tip { 
-        div {
-            display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.6rem;
-          margin-top: .8rem;
- 
-          button {
-              font-size: 2.4rem;
-              color: var(--white);
-              font-weight: 700;
-              border: none;
-              border-radius: .5rem;
-              padding-block: .6rem;
-              background: var(--sherpa-blue);
-          }
- 
-          .button-selected {
-            background: var(--water-leaf);
-          }
- 
-          input {
-              width: 100%;
-              font-size: 2.4rem;
-              text-align: center;
-              font-weight: 700;
-              border: none;
-              color: var(--sherpa-blue);
-              background: var(--squeeze);
-              border-radius: .5rem;
-          }
- 
-          input::placeholder {
-              color: var(--beetle-green);
-          }
- 
-          input:focus {
-              outline: 2px solid var(--topaz);
-          }
-      }
-  }
- }
- 
-  .results{
-     background: var(--sherpa-blue);
-     border-radius: 1.5rem;
-     padding: 4rem 2.4rem 2.4rem;
- 
-     .amount,
-     .total {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         margin-bottom: 2.4rem;
- 
-         p{
-             color: var(--white);
-             font-weight: 700;
- 
-             span{
-                 color: var(--regent-grey);
-                 font-size: 1.3rem;
-             }
-         }
- 
-         strong{
-             font-size: 3.2rem;
-             color: var(--topaz);
-         }
-     }
- 
-     button{
-         background: var(--topaz);
-         color: var(--sherpa-blue);
-         font-size: 2rem;
-         text-transform: uppercase;
-         width: 100%;
-         border: none;
-         border-radius: .5rem;
-         font-weight: 700;
-         padding-block: .9rem;
-     }
-  }
- 
-  input::-webkit-inner-spin-button,
-  input::-webkit-outer-spin-button{
-         display: none;
- 
-  }
- 
-  @media(min-width: 920px ){
-     main{
-         display: flex;
-         max-width: 92rem;
-         margin-inline: auto;
-         border-radius: 2.5rem;
-         gap: 4.8rem;
-         padding: 4.8rem;
-     }
- 
-     section {
-         width: 100%;
-     }
 
-     .info {
-        .tip {
-            div {
-                grid-template-columns: repeat(3, 1fr);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
 
-                button:hover{
-                background: var(--water-leaf);
-                cursor: pointer;
-                transition: .3s;
-                }
-            }
-        }
+:root {
+    font-size: 62.5%;
+
+    --jagged-ice: #C5E4E7;
+    --white: #FFF;
+    --greyish-turquoise: #5E7A7D;
+    --squeeze: #F3F9FA;
+    --sherpa-blue: #00474B;
+    --topaz: #26C2AE;
+    --beetle-green: #547878;
+    --regent-grey: #7f9d9f;
+    --water-leaf: #9fe8df;
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--jagged-ice);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background: var(--white);
+    padding: 3.2rem 2.4rem;
+    border-radius: 2.5rem;
+    max-width: 60rem;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info div {
+    margin-bottom: 3.2rem;
+}
+
+strong {
+    color: var(--greyish-turquoise);
+    display: block;
+    margin-bottom: .6rem;
+}
+
+.input-box {
+    background: var(--squeeze);
+    padding: .6rem 1.8rem;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+    border: 2px solid transparent;
+}
+
+.input-box input {
+    font-size: 2.4rem;
+    border: none;
+    background: transparent;
+    text-align: right;
+    width: 100%;
+    font-weight: 700;
+    outline: none;
+    color: var(--sherpa-blue);
+}
+
+.input-box input::placeholder {
+    color: var(--sherpa-blue);
+    opacity: 0.35;
+}
+
+.input-box:focus-within {
+    border-color: var(--topaz);
+}
+
+.tip div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-top: .8rem;
+}
+
+.tip button {
+    font-size: 2.4rem;
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    border-radius: .5rem;
+    padding-block: .6rem;
+    background: var(--sherpa-blue);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tip button:hover, .button-selected {
+    background: var(--water-leaf);
+}
+
+.tip input {
+    width: 100%;
+    font-size: 2.4rem;
+    text-align: center;
+    font-weight: 700;
+    border: none;
+    color: var(--sherpa-blue);
+    background: var(--squeeze);
+    border-radius: .5rem;
+    outline: none;
+    padding: 0.6rem;
+}
+
+.tip input::placeholder {
+    color: var(--beetle-green);
+}
+
+.tip input:focus {
+    outline: 2px solid var(--topaz);
+}
+
+.results {
+    background: var(--sherpa-blue);
+    border-radius: 1.5rem;
+    padding: 4rem 2.4rem 2.4rem;
+    color: var(--white);
+}
+
+.results .amount, .results .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.4rem;
+}
+
+.results strong {
+    font-size: 3.2rem;
+    color: var(--topaz);
+}
+
+.results button {
+    background: var(--topaz);
+    color: var(--sherpa-blue);
+    font-size: 2rem;
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+    border-radius: .5rem;
+    font-weight: 700;
+    padding-block: .9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.results button:hover {
+    background: var(--water-leaf);
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    display: none;
+}
+
+@media (min-width: 920px) {
+    main {
+        display: flex;
+        max-width: 92rem;
+        margin-inline: auto;
+        border-radius: 2.5rem;
+        gap: 4.8rem;
+        padding: 4.8rem;
     }
 
-    .results{
+    section {
+        width: 100%;
+    }
+
+    .tip div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .results {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 5.6rem 4rem 4rem;
-
-        .amount,
-        .total{
-            strong{
-                font-size: 4.8rem;
-            }
-        }
-
-        button:hover{
-            background: var(--water-leaf);
-            transition: .3s;
-            cursor: pointer;
-        }
     }
-  }
+
+    .results strong {
+        font-size: 4.8rem;
+    }
+}

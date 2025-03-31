@@ -98,8 +98,8 @@
               background: var(--sherpa-blue);
           }
  
-          .button-selected{
-             background: var(--topaz) ;
+          .button-selected {
+            background: var(--water-leaf);
           }
  
           input {
